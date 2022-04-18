@@ -1,0 +1,36 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    &-header {
+        h1 {
+            font-size: 4em;
+            font-weight: 900;
+        }
+
+        span {
+            font-size: 1.5em;
+            font-weight: 100;
+            letter-spacing: 0.2em;
+            padding: 1em;
+        }
+
+        height: 35vh;
+        background-size: cover;
+        justify-content: center;
+        background-position-y: 20%;
+        margin-bottom: 20px;
+        background-image: url('../assets/image/home-bg.jpg');
+    }
+
+    &-footer {       
+        margin-top: 20px;
+    }
+
+    &-body {
+        width: 90%;
+        min-width: 90%;
+    }
+}

@@ -1,0 +1,18 @@
+<app-create-task (updateTasks)="updateTables()"></app-create-task>
+<div *ngIf="isPendingTaskLoaded">
+  <app-data-table
+    tableName="Pending"
+    [columnNames]="columns"
+    [dataSource]="pendingTasks"
+    [actionIcons]="actionIcons"
+    (updateTasks)="updateTables()"
+  ></app-data-table>
+  <hr />
+  <app-data-table
+    tableName="Closed"
+    [columnNames]="columns"
+    [dataSource]="closedTasks"
+    [actionIcons]="actionIcons2"
+    (updateTasks)="updateTables()"
+  ></app-data-table>
+</div>
