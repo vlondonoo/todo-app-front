@@ -63,19 +63,8 @@ export class TodoService {
     ) 
  }
   
-  upload(formData:any) {
-  
-    // Create form data
-    // const formData = new FormData(); 
-   
-    // formData.append("file", file, file.name);
-       console.log('dtaService',formData)
-   
+  upload(formData:any) { 
     return this.http.post(`${this.url}/todos`,formData).pipe(
-      tap(_ => console.log('reponse11111')),
-      )
-  // this.http.post(this.baseApiUrl, formData)
-}
-
-  
+      tap(_ => console.log('image uploaded')),) 
+  }  
 }

@@ -42,7 +42,6 @@ export class DataTableComponent implements OnInit {
   }
 
   announceSortChange(sortState: Sort) {
-    console.log('reviwing----',sortState.direction)
     const selectService = this.dataSource[0].state === 'OPEN' ? this.todoService.sortPendingTasks(sortState.direction) : this.todoService.sortClosedTasks(sortState.direction);
     selectService.subscribe((data:any)=>{this.dataSource = data.list})
 

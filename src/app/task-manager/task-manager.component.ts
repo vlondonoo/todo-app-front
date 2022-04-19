@@ -18,30 +18,25 @@ export class TaskManagerComponent implements OnInit {
 
   ngOnInit(): void {
     this.todoService.getPendingTasks().subscribe((res: any) => {
-    
-    this.pendingTasks = res.list
-    if (this.pendingTasks) this.isPendingTaskLoaded = true
-})
+    this.pendingTasks = res.list;
+    if (this.pendingTasks) this.isPendingTaskLoaded = true;
+    })
 
     this.todoService.getClosedTasks().subscribe((res: any) => {
-    this.closedTasks = res.list
-      if (this.closedTasks) this.isClosedTaskLoaded = true  
+    this.closedTasks = res.list;
+      if (this.closedTasks) this.isClosedTaskLoaded = true;
     })
   }
 
   updateTables(){
-      zip(this.todoService.getPendingTasks(),this.todoService.getClosedTasks()).subscribe(([pending, closed]:any) =>{
-        console.log('valores tables')
-        this.closedTasks = closed.list;
-        this.pendingTasks = pending.list;
-      }
-      )
+    zip(this.todoService.getPendingTasks(),this.todoService.getClosedTasks()).subscribe(([pending, closed]:any) =>{
+      this.closedTasks = closed.list;
+      this.pendingTasks = pending.list;
+    })
   }
 
   columns = ['id', 'message', 'state', 'image','updateAt','actions'];
-  actionIcons = ['30','akar-icons:circle-check','green','CLOSE']
-  actionIcons2 = ['35','ion:arrow-undo-circle-outline','#ffd300','OPEN']
-  
-
+  actionIcons = ['30','akar-icons:circle-check','green','CLOSE'];
+  actionIcons2 = ['35','ion:arrow-undo-circle-outline','#ffd300','OPEN'];
 
 }
